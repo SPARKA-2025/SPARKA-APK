@@ -11,7 +11,7 @@ import com.data.Result
 import org.json.JSONException
 import org.json.JSONObject
 
-class LoginViewModel(private val Repo: Repository): ViewModel() {
+class LoginViewModel(private val repo: Repository): ViewModel() {
 
     private val _loginResult = MutableLiveData<Result<LoginResponse>>()
     val loginResult: LiveData<Result<LoginResponse>> = _loginResult
@@ -22,12 +22,14 @@ class LoginViewModel(private val Repo: Repository): ViewModel() {
     private val _errorMessage = MutableLiveData<String>()
     val errorMessage: LiveData<String> = _errorMessage
 
-
-    fun login (email: String, pass: String) {
+    //rev
+    fun login(email: String, password: String) {
         viewModelScope.launch {
+            _isLoading.value = true
             _loginResult.value = Result.Loading
-            val result = Repo.login(email, pass)
+            val result = repo.login(email, password)
             _loginResult.value = result
+            _isLoading.value = false
         }
     }
 
@@ -41,10 +43,10 @@ class LoginViewModel(private val Repo: Repository): ViewModel() {
     }
 
     fun checkToken(): Boolean {
-        return Repo.isTokenValid()
+        return repo.isTokenValid()
     }
 
     fun logout() {
-        Repo.logout()
+        repo.logout()
     }
 }

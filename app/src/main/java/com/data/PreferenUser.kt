@@ -2,18 +2,19 @@ package com.data
 
 import android.content.Context
 import android.util.Log
+import androidx.core.content.edit
 
 internal class UserPreferences(context: Context) {
 
     private val sharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
     fun saveUser(id: Int, token: String, expiresIn : Int) {
-        val edit = sharedPreferences.edit()
-        edit.putInt(ID, id)
-        edit.putString(TOKEN, token)
-        edit.putLong(EXPIRES_AT, System.currentTimeMillis() + expiresIn * 1000)
-        edit.putBoolean(IS_LOGIN, true)
-        edit.apply()
+        sharedPreferences.edit {
+            putInt(ID, id)
+            putString(TOKEN, token)
+            putLong(EXPIRES_AT, System.currentTimeMillis() + expiresIn * 1000)
+            putBoolean(IS_LOGIN, true)
+        }
         Log.d("token", token)
     }
 
@@ -32,11 +33,15 @@ internal class UserPreferences(context: Context) {
     }
 
     fun clearUser() {
-        val edit = sharedPreferences.edit()
-        edit.remove(TOKEN)
-        edit.putBoolean(IS_LOGIN, false)
-        edit.remove("expires_in")
-        edit.apply()
+        sharedPreferences.edit {
+            remove(TOKEN)
+            putBoolean(IS_LOGIN, false)
+            remove("expires_in")
+        }
+    }
+
+    fun isLoggedIn(): Boolean {
+        return sharedPreferences.getBoolean(IS_LOGIN, false)
     }
 
     companion object {

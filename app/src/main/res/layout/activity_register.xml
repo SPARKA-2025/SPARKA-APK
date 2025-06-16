@@ -40,7 +40,7 @@
             android:textColor="@color/bluespark"
             android:textSize="32sp"
             android:fontFamily="@font/gotham"
-            android:text="Registrasi"/>
+            android:text="Register"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -108,65 +108,28 @@
             android:hint="Masukkan Password"
             android:fontFamily="@font/gotham"
             app:hintTextColor="@color/gray_light"/>
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alamat"
+            android:text="Konfirmasi Password"
             android:alpha="0.7"
             android:textStyle="bold"
-            android:fontFamily="@font/gotham"
             android:textColor="@color/gray"/>
 
-        <EditText
-            android:id="@+id/AddressEditText"
+        <com.example.bottomnavyt.costumview.PasswordText
+            android:id="@+id/ConfirmText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:background="@drawable/text_field_background"
             android:padding="12dp"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:hint="Masukkan Konfirmasi Password"
             android:fontFamily="@font/gotham"
-            android:hint="Masukkan Alamat"
             app:hintTextColor="@color/gray_light"/>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nomor HP"
-            android:alpha="0.7"
-            android:textStyle="bold"
-            android:fontFamily="@font/gotham"
-            android:textColor="@color/gray"/>
-
-        <EditText
-            android:id="@+id/PhoneEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:background="@drawable/text_field_background"
-            android:padding="12dp"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:fontFamily="@font/gotham"
-            android:hint="Masukkan Nomor HP"
-            app:hintTextColor="@color/gray_light"/>
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Confirm Password"-->
-<!--            android:alpha="0.7"-->
-<!--            android:textStyle="bold"/>-->
-
-<!--        <com.example.bottomnavyt.costumview.PasswordText-->
-<!--            android:id="@+id/confirm_password"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:inputType="textPassword"/>-->
 
         <Button
             android:id="@+id/btnLogin"
@@ -181,7 +144,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/gotham"
             android:backgroundTint="@color/bluespark"
-            android:text="@string/register"/>
+            android:text="Next"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -194,7 +157,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Anda Belum Memiliki Akun?"
+                android:text="Anda Sudah Memiliki Akun?"
                 android:layout_gravity="center"
                 android:alpha="0.7" />
 
@@ -203,7 +166,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text=" Daftar"
+                android:text="  Login"
                 android:layout_gravity="center"
                 android:textColor="@color/bluespark"
                 android:alpha="0.7" />

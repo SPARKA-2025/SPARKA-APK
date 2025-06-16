@@ -1,41 +1,32 @@
 package com.ui.bookedform
 
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
-import com.example.bottomnavyt.ReceiptActivity
-import java.util.Calendar
 import android.view.View
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.ViewModelFactory
-import com.example.bottomnavyt.databinding.ActivityFormBinding
 import com.data.Result
-import java.text.SimpleDateFormat
+import com.example.bottomnavyt.ReceiptActivity
+import com.example.bottomnavyt.databinding.ActivityRegisterPlatBinding
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.util.Date
-import java.util.Locale
 
 
 class Form : AppCompatActivity() {
 
-    private lateinit var binding: ActivityFormBinding
+    private lateinit var binding: ActivityRegisterPlatBinding
     private lateinit var bookingViewModel: FormViewModel
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityFormBinding.inflate(layoutInflater)
+        binding = ActivityRegisterPlatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val factory = ViewModelFactory.getInstance(this)

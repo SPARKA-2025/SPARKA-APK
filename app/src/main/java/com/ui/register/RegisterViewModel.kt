@@ -14,13 +14,16 @@ class RegisterViewModel(private val repository: Repository): ViewModel() {
     val registResult: LiveData<Result<LoginResponse>> = _registResult
 
     private val _isLoading = MutableLiveData<Boolean>()
-    val isLoading : LiveData<Boolean> =  _isLoading
+    val isLoading: LiveData<Boolean> = _isLoading
 
-    fun register (name: String, email: String, pass: String, address: String, phone: String) {
+    //rev
+    fun register(name: String, email: String, pass: String, plat: String, jenisMobil: String) {
         viewModelScope.launch {
             _registResult.value = Result.Loading
-            val result = repository.register(name, email, pass, address, phone)
+            _isLoading.value = true
+            val result = repository.register(name, email, pass, plat, jenisMobil)
             _registResult.value = result
+            _isLoading.value = false
         }
     }
 }

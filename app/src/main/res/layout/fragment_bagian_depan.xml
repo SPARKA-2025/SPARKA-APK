@@ -6,8 +6,6 @@
     android:orientation="vertical"
     tools:context="com.ui.pilihparkir.BagianDepan">
 
-
-
     <LinearLayout
         android:id="@+id/linearLayoutImage"
         android:layout_width="match_parent"
@@ -98,6 +96,15 @@
         </LinearLayout>
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/imageMataAngin"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/matangin"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <HorizontalScrollView
         android:id="@+id/layout_scroll"

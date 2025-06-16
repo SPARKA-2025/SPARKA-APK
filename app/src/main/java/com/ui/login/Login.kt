@@ -1,10 +1,12 @@
 package com.ui.login
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import android.view.WindowInsets
+import android.view.WindowInsetsController
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
@@ -17,12 +19,25 @@ import com.ui.register.RegisterActivity
 
 class Login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-//    private var modelUser: Username = Username()
     private lateinit var userPreferences: UserPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityLoginBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+
+        // Fullscreen UI-rev
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.setDecorFitsSystemWindows(false)
+            window.insetsController?.apply {
+                hide(WindowInsets.Type.statusBars())
+                systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            }
+        } else {
+            @Suppress("DEPRECATION")
+            window.decorView.systemUiVisibility =
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        }
+
+    binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val viewModelFactory: ViewModelFactory = ViewModelFactory.getInstance(this)
@@ -32,9 +47,9 @@ class Login : AppCompatActivity() {
 
         userPreferences = UserPreferences(this)
 
-        if (userPreferences.isTokenExpired()) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        //Cek Token-rev
+        if (!userPreferences.isTokenExpired() && userPreferences.isLoggedIn()) {
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
 
@@ -60,10 +75,10 @@ class Login : AppCompatActivity() {
 
         })
 
-
+        //Login Button - rev
         binding.btnLogin.setOnClickListener {
-            val email = binding.EmailText.text.toString()
-            val password = binding.PasswordText.text.toString()
+            val email = binding.etEmail.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
 
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Email dan Password harus diisi", Toast.LENGTH_SHORT).show()
@@ -73,9 +88,9 @@ class Login : AppCompatActivity() {
             loginViewModel.login(email, password)
         }
 
+        //Register Button - rev
         binding.txtRegister.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
 

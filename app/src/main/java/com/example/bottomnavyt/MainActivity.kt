@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.data.UserPreferences
 import com.example.bottomnavyt.databinding.ActivityMainBinding
 import com.ui.home.Home
-import com.ui.listbooked.Profile
+import com.ui.listbooked.Order
 import com.ui.login.Login
 
 class MainActivity : AppCompatActivity() {
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
 
                 R.id.home -> replaceFragment(Home())
-                R.id.profile -> replaceFragment(Profile())
+                R.id.profile -> replaceFragment(Order())
 //                R.id.settings -> replaceFragment(Settings())
 
                 else ->{

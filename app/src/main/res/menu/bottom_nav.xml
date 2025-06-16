@@ -5,9 +5,9 @@
         android:id="@+id/home"
         android:icon="@drawable/ic_baseline_home_24"/>
     <item android:title="Order"
-        android:id="@+id/profile"
+        android:id="@+id/order"
         android:icon="@drawable/ic_baseline_settings_24"/>
-<!--    <item android:title="Profile"-->
-<!--        android:id="@+id/settings"-->
-<!--        android:icon="@drawable/ic_baseline_person_24"/>-->
+    <item android:title="Profile"
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_person_outline_white_24dp"/>
 </menu>
