@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">APKSPARK</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+
+    <string-array name="data_parkiran">
+        <item>Area Rektorat</item>
+        <item>Fakultas Matematika dan IPA</item>
+        <item>Fakultas Teknik</item>
+        <item>Fakultas Bahasa dan Seni</item>
+        <item>Fakultas Ilmu Sosial dan Politik</item>
+        <item>Fakultas Kedokteran</item>
+        <item>Fakultas Ilmu Pendidikan dan Psikologi</item>
+        <item>Fakultas Ekonomi dan Bisnis</item>
+        <item>Fakultas Ilmu Keolahragaan</item>
+        <item>Fakultas Hukum</item>
+    </string-array>
+
+    <string-array name="jenis_parkiran">
+        <item>Parkir Umum</item>
+        <item>Parkir Umum</item>
+        <item>Parkir Umum</item>
+        <item>Parkir Umum</item>
+        <item>Parkir Umum</item>
+        <item>Parkir Umum</item>
+        <item>Parkir Umum</item>
+        <item>Parkir Umum</item>
+        <item>Parkir Umum</item>
+        <item>Parkir Umum</item>
+    </string-array>
+
+    <string-array name="lokasi_parkiran">
+        <item>Parkir di belakang rektorat</item>
+        <item>Parkir di depan Gedung DSIH</item>
+        <item>Parkir di belakang Gedung E</item>
+        <item>Parkir di depan Gedung Perpustakaan</item>
+        <item>Parkir di depan Gedung Perpustakaan</item>
+        <item>Parkir di depan Gedung Perpustakaan</item>
+        <item>Parkir di depan Gedung Perpustakaan</item>
+        <item>Parkir di depan Gedung Perpustakaan</item>
+        <item>Parkir di depan Gedung Perpustakaan</item>
+        <item>Parkir di depan Gedung Perpustakaan</item>
+    </string-array>
+
+    <string name="tab_text_1">Depan</string>
+    <string name="tab_text_2">Belakang</string>
+    <string name="mushollah_rektorat">Mushollah Rektorat</string>
+    <string name="register">Daftar</string>
+    <string name="plat_nomer">K 3455 ALB</string>
+    <string name="jenis">Mobil Besar</string>
+
+</resources>

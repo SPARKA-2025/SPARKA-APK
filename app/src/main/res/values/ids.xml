@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="Logo" type="id" />
+    <item name="ImageView" type="id" />
+    <item name="tvJenisKendaraan" type="id" />
+    <item name="plat_nomor" type="id" />
+    <item name="jenis" type="id" />
+    <item name="textView4" type="id" />
+    <item name="tvHour" type="id" />
+    <item name="tvDate" type="id" />
+</resources>
