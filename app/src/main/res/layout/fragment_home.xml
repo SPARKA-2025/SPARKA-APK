@@ -2,10 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ui.home.HomeFragment">
+    tools:context="com.example.sparka_v0.ui.splashscreen.home.HomeFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -27,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <!-- LogSparka di kiri -->
+                <!-- LogSparka -->
                 <ImageView
                     android:id="@+id/LogSparka"
                     android:layout_width="50dp"
@@ -40,7 +39,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
 
-                <!-- Notifikasi di kanan -->
+                <!-- Notifikasi -->
                 <ImageView
                     android:id="@+id/Notif"
                     android:layout_width="32dp"
@@ -52,7 +51,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:tint="@color/bluespark"/>
 
-                <!-- ImageView di kanan -->
+                <!-- Logout -->
                 <ImageView
                     android:id="@+id/btn_logout"
                     android:layout_width="32dp"

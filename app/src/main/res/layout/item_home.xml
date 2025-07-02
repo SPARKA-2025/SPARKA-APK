@@ -1,68 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    android:id="@+id/list_item"
-    android:clickable="true"
-    android:focusable="true"
-    android:foreground="?android:attr/selectableItemBackground"
-
-
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/faculty">
+        android:padding="16dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvNamaFakultas"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
+            android:text="Nama Fakultas"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:fontFamily="@font/gotham"/>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="100"
-                android:orientation="vertical">
+        <ImageView
+            android:id="@+id/ivImageFakultas"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="8dp" />
 
-                <TextView
-                    android:id="@+id/tv_place"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Area Rektorat"
-                    android:textSize="16sp"
-                    android:textColor="#000000"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/gotham"/>
+        <TextView
+            android:id="@+id/tvDeskripsiFakultas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deskripsi singkat fakultas"
+            android:layout_marginTop="4dp"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:fontFamily="@font/gotham"/>
 
-                <TextView
-                    android:id="@+id/tv_type"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:fontFamily="@font/gotham"
-                    android:text="Parkir Umum"
-                    android:textColor="#4b4b4b"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_location"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/gotham"
-                    android:text="Parkir dibelakang rektorat"
-                    android:textColor="#8a8a8a" />
-
-            </LinearLayout>
-
-        </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

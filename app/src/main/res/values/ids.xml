@@ -8,4 +8,8 @@
     <item name="textView4" type="id" />
     <item name="tvHour" type="id" />
     <item name="tvDate" type="id" />
+    <item name="main" type="id"/>
+    <item name="btn_back" type="id"/>
+    <item name="btnRegister" type="id"/>
+    <item name="registerTitle" type="id"/>
 </resources>

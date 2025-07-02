@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F7F5F2"
-    tools:context=".ui.order.OrderF">
+    tools:context="com.example.sparka_v0.ui.splashscreen.order.OrderFragment">
 
     <!-- Pesanan title -->
     <TextView

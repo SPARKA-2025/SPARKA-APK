@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellowspark"
+    tools:context=".ui.splashscreen.register.RegisterPlatActivity">
+
+    <ImageView
+        android:id="@+id/btnback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/baseline_arrow_back_ios_new_24"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="297dp"
+        android:layout_height="102dp"
+        android:backgroundTint="@color/white"
+        android:padding="8dp"
+        android:src="@drawable/sparkaxunnes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnback" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_nav_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="32dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="@color/bluespark"
+            android:textSize="32sp"
+            android:fontFamily="@font/gotham"
+            android:text="Register"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nomor Plat"
+            android:alpha="2"
+            android:fontFamily="@font/gotham"
+            android:textStyle="bold"
+            android:textColor="@color/bluespark"/>
+
+        <EditText
+            android:id="@+id/PlatEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:background="@drawable/text_field_background"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/gotham"
+            android:hint="Masukkan Nomor Plat"
+            app:hintTextColor="@color/gray_light"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alamat"
+            android:layout_marginTop="10dp"
+            android:alpha="2"
+            android:textStyle="bold"
+            android:fontFamily="@font/gotham"
+            android:textColor="@color/bluespark" />
+
+        <EditText
+            android:id="@+id/AlamatEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:background="@drawable/text_field_background"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/gotham"
+            android:hint="Masukkan Alamat"
+            app:hintTextColor="@color/gray_light" />
+
+        <!-- Tambahan Nomor Telepon -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nomor Telepon"
+            android:layout_marginTop="10dp"
+            android:alpha="2"
+            android:textStyle="bold"
+            android:fontFamily="@font/gotham"
+            android:textColor="@color/bluespark"/>
+
+        <EditText
+            android:id="@+id/PhoneEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:background="@drawable/text_field_background"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/gotham"
+            android:hint="Masukkan Nomor Telepon"
+            app:hintTextColor="@color/gray_light" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gotham"
+            android:backgroundTint="@color/bluespark"
+            android:text="@string/register"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:paddingBottom="72dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anda Sudah Memiliki Akun?"
+                android:layout_gravity="center"
+                android:alpha="0.7" />
+
+            <TextView
+                android:id="@+id/txtRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text=" Login"
+                android:layout_gravity="center"
+                android:textColor="@color/bluespark"
+                android:alpha="0.7" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
