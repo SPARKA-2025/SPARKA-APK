@@ -75,11 +75,39 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Phone -->
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nomor Telepon"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/editPlat"
+        app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Inputan Phone -->
+        <EditText
+            android:id="@+id/PhoneEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="084"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/labelPlat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
 
         <!-- Dark Mode -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/PhoneEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:orientation="horizontal"
             android:padding="16dp">
 
@@ -106,7 +134,8 @@
             android:background="?android:attr/selectableItemBackground"
             android:padding="16dp"
             android:text="Logout"
-            android:textColor="#FF0000" />
+            android:textColor="#FF0000"
+            android:textStyle="bold"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

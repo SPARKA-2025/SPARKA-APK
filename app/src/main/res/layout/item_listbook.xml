@@ -1,117 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:clickable="true"
-    android:focusable="true"
-    app:cardElevation="2dp"
-    android:layout_marginHorizontal="12dp"
-    android:layout_gravity="center"
-    android:layout_marginBottom="8dp"
-    android:foreground="?attr/selectableItemBackground"
-    app:cardCornerRadius="8dp">
+    android:layout_height="match_parent"
+    android:background="#F0F2F5"
+    android:padding="16dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBookingInfo"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="12dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:fontFamily="@font/gotham"
-            android:text="Plat Nomer"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SmallSp" />
+            android:padding="24dp">
 
-        <TextView
-            android:id="@+id/plat_nomor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/gotham"
-            android:text="@string/plat_nomer"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-
-        <TextView
-            android:id="@+id/jenis"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/gotham"
-            android:text="Jenis Kendaraan"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plat_nomor" />
-
-        <TextView
-            android:id="@+id/tvJenisKendaraan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/gotham"
-            android:text="@string/jenis"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/jenis" />
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <LinearLayout
+            <!-- Title -->
+            <TextView
+                android:id="@+id/titleBooking"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="end"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="4dp"
-                android:background="@color/yellowspark"
-                app:cardCornerRadius = "20dp">
+                android:text="Booking Details"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
 
-                <TextView
-                    android:id="@+id/tvHour"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/gotham"
-                    android:text="14 Agustus 2024"
-                    android:textColor="@color/black"
-                    android:textSize="10sp"
-                    app:layout_constraintBottom_toTopOf="@+id/tvDate"
-                    app:layout_constraintEnd_toEndOf="parent" />
+            <!-- Slot -->
+            <TextView
+                android:id="@+id/labelSeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Slot"
+                android:textSize="16sp"
+                android:textColor="#666"
+                app:layout_constraintTop_toBottomOf="@id/titleBooking"
+                app:layout_constraintStart_toStartOf="parent"/>
 
-                <TextView
-                    android:id="@+id/tvDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="14 Juni 2023"
-                    android:textSize="8sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:id="@+id/tvSeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A1"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/labelSeat"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-            </LinearLayout>
+            <!-- Plat -->
+            <TextView
+                android:id="@+id/labelPlat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plat Nomor"
+                android:textSize="16sp"
+                android:textColor="#666"
+                app:layout_constraintTop_toBottomOf="@id/labelSeat"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"/>
 
+            <TextView
+                android:id="@+id/tvPlat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B 1234 ABC"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/labelPlat"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-        </androidx.cardview.widget.CardView>
+            <!-- Status Button -->
+            <Button
+                android:id="@+id/btnStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Dibooking"
+                android:textAllCaps="false"
+                android:backgroundTint="#2196F3"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_marginTop="24dp"
+                app:cornerRadius="12dp"
+                app:layout_constraintTop_toBottomOf="@id/labelPlat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

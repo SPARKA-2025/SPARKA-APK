@@ -17,25 +17,40 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction().replace(R.id.containerFragment, homeFragment).commit()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.containerFragment, homeFragment)
+            .commit()
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_home -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.containerFragment, homeFragment).commit()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.containerFragment, homeFragment)
+                        .commit()
                     true
                 }
+
                 R.id.nav_order -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.containerFragment, orderFragment).commit()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.containerFragment, orderFragment)
+                        .commit()
                     true
                 }
+
                 R.id.nav_profile -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.containerFragment, profileFragment).commit()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.containerFragment, profileFragment)
+                        .commit()
                     true
                 }
+
                 else -> false
             }
         }
+    }
+    fun navigateToOrderTab() {
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNav.selectedItemId = R.id.nav_order
     }
 }
