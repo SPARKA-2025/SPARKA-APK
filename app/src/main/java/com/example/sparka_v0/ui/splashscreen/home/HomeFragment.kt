@@ -27,6 +27,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         rvFakultas = view.findViewById(R.id.rv_fakultas)
         val logoutBtn = view.findViewById<ImageView>(R.id.btn_logout)
+        val notifBtn = view.findViewById<ImageView>(R.id.Notif)
 
         adapter = FakultasAdapter { data ->
             val intent = Intent(requireContext(), DetailParkirActivity::class.java).apply {
@@ -69,6 +70,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     requireActivity().finishAffinity()
                 }
                 .setNegativeButton("Batal", null)
+                .show()
+        }
+        notifBtn.setOnClickListener {
+            AlertDialog.Builder(requireContext())
+                .setTitle("Pemberitahuan")
+                .setMessage("Harap parkir secara rapi dan tidak mengganggu kendaraan lain 🙏")
+                .setPositiveButton("Oke") { dialog, _ -> dialog.dismiss() }
                 .show()
         }
     }
