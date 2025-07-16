@@ -17,6 +17,24 @@ class FakultasAdapter(
     private val onItemClick: (Fakultas) -> Unit
 ) : ListAdapter<Fakultas, FakultasAdapter.FakultasViewHolder>(DIFF_CALLBACK) {
 
+    private var fullList = listOf<Fakultas>()
+
+    fun setData(data: List<Fakultas>) {
+        fullList = data
+        submitList(data)
+    }
+
+    fun filter(query: String) {
+        val filtered = if (query.isEmpty()) {
+            fullList
+        } else {
+            fullList.filter {
+                it.nama.contains(query, ignoreCase = true)
+            }
+        }
+        submitList(filtered)
+    }
+
     inner class FakultasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val tvNama: TextView = itemView.findViewById(R.id.tvNamaFakultas)
         private val ivImage: ImageView = itemView.findViewById(R.id.ivImageFakultas)
@@ -30,20 +48,16 @@ class FakultasAdapter(
                 val imageBytes = Base64.decode(item.image, Base64.DEFAULT)
                 val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
                 ivImage.setImageBitmap(bitmap)
-            } catch (e: Exception) {
-                e.printStackTrace()
+            } catch (_: Exception) {
                 ivImage.setImageResource(R.drawable.img_8)
             }
 
-            itemView.setOnClickListener {
-                onItemClick(item)
-            }
+            itemView.setOnClickListener { onItemClick(item) }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FakultasViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_home, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_home, parent, false)
         return FakultasViewHolder(view)
     }
 

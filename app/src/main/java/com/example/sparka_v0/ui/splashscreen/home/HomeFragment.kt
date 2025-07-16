@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import androidx.appcompat.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -28,6 +29,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         rvFakultas = view.findViewById(R.id.rv_fakultas)
         val logoutBtn = view.findViewById<ImageView>(R.id.btn_logout)
         val notifBtn = view.findViewById<ImageView>(R.id.Notif)
+        val searchView = view.findViewById<SearchView>(R.id.searchView)
 
         adapter = FakultasAdapter { data ->
             val intent = Intent(requireContext(), DetailParkirActivity::class.java).apply {
@@ -48,14 +50,20 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         if (!token.isNullOrEmpty()) {
             viewModel.getFakultas(token)
         }
-
         viewModel.fakultasList.observe(viewLifecycleOwner) {
-            adapter.submitList(it)
+            adapter.setData(it)
         }
 
         viewModel.errorMessage.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
         }
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean = false
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adapter.filter(newText.orEmpty())
+                return true
+            }
+        })
 
         logoutBtn.setOnClickListener {
             AlertDialog.Builder(requireContext())
