@@ -47,7 +47,7 @@
             <View
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/slot_booked" />
+                android:background="@color/bluespark" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -145,7 +145,7 @@
                         android:id="@+id/seat_1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/slot_empty" />
+                        android:background="@drawable/slot_occupied" />
 
                     <TextView
                         android:id="@+id/id_slot"

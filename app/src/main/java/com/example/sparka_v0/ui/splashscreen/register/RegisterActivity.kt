@@ -17,7 +17,7 @@ class RegisterActivity : AppCompatActivity() {
         val etPassword = findViewById<EditText>(R.id.etPassword)
         val etConfirm = findViewById<EditText>(R.id.ConfirmText)
         val btnRegister = findViewById<Button>(R.id.btnRegister)
-        val txtLogin = findViewById<TextView>(R.id.txtRegister) // Optional, kalau kamu pakai "sudah punya akun? Login"
+        val txtLogin = findViewById<TextView>(R.id.txtRegister)
 
         btnRegister.setOnClickListener {
             val nama = etNama.text.toString().trim()

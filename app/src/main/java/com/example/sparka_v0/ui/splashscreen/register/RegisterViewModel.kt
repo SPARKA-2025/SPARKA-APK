@@ -15,11 +15,10 @@ class RegisterViewModel : ViewModel() {
         email: String,
         password: String,
         phone: String,
-        alamat: String,
         platNomor: String?,
         onResult: (Boolean, String) -> Unit
     ) {
-        val request = RegisterRequest(nama, email, password, phone, alamat, platNomor)
+        val request = RegisterRequest(nama, email, password, phone, platNomor)
         Log.d("REGISTER_DEBUG", "Request: $request")
 
         ApiConfig.api.register(request).enqueue(object : Callback<RegisterResponse> {

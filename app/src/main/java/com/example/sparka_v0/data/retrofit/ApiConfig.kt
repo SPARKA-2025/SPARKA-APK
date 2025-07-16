@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit
 import kotlin.jvm.java
 
 object ApiConfig {
-    private const val BASE_URL = "https://test.raiharc.org"
+    private const val BASE_URL = "https://draycostuff.web.id"
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellowspark"
+    android:background="#BDBDBD"
     tools:context=".ui.splashscreen.register.RegisterPlatActivity">
 
     <ImageView
@@ -24,10 +24,12 @@
         android:id="@+id/Logo"
         android:layout_width="297dp"
         android:layout_height="102dp"
+        android:layout_marginTop="72dp"
         android:backgroundTint="@color/white"
         android:padding="8dp"
         android:src="@drawable/sparkaxunnes"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnback" />
 
@@ -74,29 +76,6 @@
             android:fontFamily="@font/gotham"
             android:hint="Masukkan Nomor Plat"
             app:hintTextColor="@color/gray_light"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alamat"
-            android:layout_marginTop="10dp"
-            android:alpha="2"
-            android:textStyle="bold"
-            android:fontFamily="@font/gotham"
-            android:textColor="@color/bluespark" />
-
-        <EditText
-            android:id="@+id/AlamatEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPostalAddress"
-            android:background="@drawable/text_field_background"
-            android:padding="12dp"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:fontFamily="@font/gotham"
-            android:hint="Masukkan Alamat"
-            app:hintTextColor="@color/gray_light" />
 
         <!-- Tambahan Nomor Telepon -->
         <TextView

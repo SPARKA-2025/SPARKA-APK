@@ -15,9 +15,6 @@ data class RegisterRequest(
     @SerializedName("phone")
     val phone: String,
 
-    @SerializedName("alamat")
-    val alamat : String,
-
     @SerializedName("plat_nomor")
     val platNomor: String? = null
 
